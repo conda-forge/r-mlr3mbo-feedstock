@@ -1,4 +1,4 @@
-{% set version = '0.1.2' %}
+{% set version = "0.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mlr3mbo_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mlr3mbo/mlr3mbo_{{ version }}.tar.gz
-  sha256: dcf61b5d249dd0a604256bbffb81b64cc3ad89517f3c4ffb22f35a5dbda2d5c2
+  sha256: 86bd7e8a453b02f109dcf7c44668ad5d4305144bb3fb09981f7492104a2ae383
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -23,8 +23,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}          # [not win]
-    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,6 +33,7 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-r6 >=2.4.1
     - r-bbotk >=0.5.4
     - r-checkmate >=2.0.0
     - r-data.table
@@ -41,10 +42,11 @@ requirements:
     - r-mlr3misc >=0.11.0
     - r-mlr3tuning >=0.14.0
     - r-paradox >=0.10.0
-    - r-r6 >=2.4.1
+    - r-spacefillr
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-r6 >=2.4.1
     - r-bbotk >=0.5.4
     - r-checkmate >=2.0.0
     - r-data.table
@@ -53,7 +55,7 @@ requirements:
     - r-mlr3misc >=0.11.0
     - r-mlr3tuning >=0.14.0
     - r-paradox >=0.10.0
-    - r-r6 >=2.4.1
+    - r-spacefillr
 
 test:
   requires:
@@ -75,16 +77,9 @@ about:
   home: https://mlr3mbo.mlr-org.com
   dev_url: https://github.com/mlr-org/mlr3mbo
   license: LGPL-3.0-only
-  summary: A modern and flexible approach to Bayesian Optimization / Model Based Optimization
-    building on the 'bbotk' package. 'mlr3mbo' is a toolbox providing both ready-to-use
-    optimization algorithms as well as their fundamental building blocks allowing for
-    straightforward implementation of custom algorithms. Single- and multi-objective
-    optimization is supported as well as mixed continuous, categorical and conditional
-    search spaces. Moreover, using 'mlr3mbo' for hyperparameter optimization of machine
-    learning models within the 'mlr3' ecosystem is straightforward via 'mlr3tuning'.
-    Examples of ready-to-use optimization algorithms include Efficient Global Optimization
-    by Jones et al. (1998) <doi:10.1023/A:1008306431147>, ParEGO by Knowles (2006) <doi:10.1109/TEVC.2005.851274>
-    and SMS-EGO by Ponweiser et al. (2008) <doi:10.1007/978-3-540-87700-4_78>.
+  summary: A modern and flexible approach to Bayesian Optimization / Model Based Optimization building on the 'bbotk' package. 'mlr3mbo' is a toolbox providing both ready-to-use optimization algorithms as well as their fundamental building blocks allowing for straightforward implementation of custom algorithms. Single- and
+    multi-objective optimization is supported as well as mixed continuous, categorical and conditional search spaces. Moreover, using 'mlr3mbo' for hyperparameter optimization of machine learning models within the 'mlr3' ecosystem is straightforward via 'mlr3tuning'. Examples of ready-to-use optimization algorithms include
+    Efficient Global Optimization by Jones et al. (1998) <doi:10.1023/A:1008306431147>, ParEGO by Knowles (2006) <doi:10.1109/TEVC.2005.851274> and SMS-EGO by Ponweiser et al. (2008) <doi:10.1007/978-3-540-87700-4_78>.
   license_family: LGPL
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-3
