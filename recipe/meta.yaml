@@ -23,8 +23,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}          # [not win]
-    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,6 +33,7 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-r6 >=2.4.1
     - r-bbotk >=0.5.4
     - r-checkmate >=2.0.0
     - r-data.table
@@ -41,10 +42,11 @@ requirements:
     - r-mlr3misc >=0.11.0
     - r-mlr3tuning >=0.14.0
     - r-paradox >=0.10.0
-    - r-r6 >=2.4.1
+    - r-spacefillr
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-r6 >=2.4.1
     - r-bbotk >=0.5.4
     - r-checkmate >=2.0.0
     - r-data.table
@@ -53,7 +55,7 @@ requirements:
     - r-mlr3misc >=0.11.0
     - r-mlr3tuning >=0.14.0
     - r-paradox >=0.10.0
-    - r-r6 >=2.4.1
+    - r-spacefillr
 
 test:
   requires:
