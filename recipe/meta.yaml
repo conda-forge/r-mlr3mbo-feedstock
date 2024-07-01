@@ -36,27 +36,27 @@ requirements:
   host:
     - r-base
     - r-r6 >=2.4.1
-    - r-bbotk >=0.5.4
+    - r-bbotk >=1.0.0
     - r-checkmate >=2.0.0
     - r-data.table
     - r-lgr >=0.3.4
     - r-mlr3 >=0.14.0
     - r-mlr3misc >=0.11.0
-    - r-mlr3tuning >=0.14.0
-    - r-paradox >=0.10.0
+    - r-mlr3tuning >=1.0.0
+    - r-paradox >=1.0.0
     - r-spacefillr
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-r6 >=2.4.1
-    - r-bbotk >=0.5.4
+    - r-bbotk >=1.0.0
     - r-checkmate >=2.0.0
     - r-data.table
     - r-lgr >=0.3.4
     - r-mlr3 >=0.14.0
     - r-mlr3misc >=0.11.0
-    - r-mlr3tuning >=0.14.0
-    - r-paradox >=0.10.0
+    - r-mlr3tuning >=1.0.0
+    - r-paradox >=1.0.0
     - r-spacefillr
 
 test:
