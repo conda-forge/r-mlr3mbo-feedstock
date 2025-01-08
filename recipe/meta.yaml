@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mlr3mbo_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mlr3mbo/mlr3mbo_{{ version }}.tar.gz
-  sha256: 31df28abc9be1ee07c747d974d15ab4536a7a044124050d203f62c697a2bb249
+  sha256: 16680e4a5396beced57a02b72cb2a51d4ff18c7def882a3555528f801bc97960
 
 build:
   number: 0
