@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mlr3mbo_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mlr3mbo/mlr3mbo_{{ version }}.tar.gz
-  sha256: 49b8307ff0e60a38ce169d45bd7f1e8f0b3d624fb4f1d0a1f0d741778b159524
+  sha256: 843b545dfc85222a5c9e7727dc565d7b8dc4daccf3824849227a7582c8bd219f
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
